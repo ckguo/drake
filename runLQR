@@ -1,0 +1,8 @@
+function runLQR()
+clf;
+p = ElasticRodPlant;
+v = ElasticRodVisualizer(p);
+[utraj,xtraj] = rodTrajectory(p);
+v.playback(xtraj);
+
+end
