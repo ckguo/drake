@@ -11,8 +11,6 @@ classdef ElasticRodVisualizer < Visualizer
         end
             
         function draw(obj,t,x)
-            disp(x(1))
-            disp(x(2))
             plot(x(1), x(2), '*')
             axis([-1, 2, -1, 2])
         end
