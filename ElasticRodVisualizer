@@ -1,0 +1,32 @@
+classdef ElasticRodVisualizer < Visualizer
+    %UNTITLED2 Summary of this class goes here
+    %   Detailed explanation goes here
+    
+    properties
+    end
+    
+    methods
+        function obj = ElasticRodVisualizer(plant)
+            obj = obj@Visualizer(plant.getOutputFrame);
+        end
+            
+        function draw(obj,t,x)
+            disp(x(1))
+            disp(x(2))
+            plot(x(1), x(2), '*')
+            axis([-1, 2, -1, 2])
+        end
+        
+        function drawWrapper(obj,t,y)
+          sfigure(obj.fignum);
+          hold on;
+          draw(obj,t,y);
+          if (obj.display_time)
+            title(['t = ', num2str(t,'%.2f') ' sec']);
+          end
+          drawnow;
+        end
+    end
+    
+end
+
